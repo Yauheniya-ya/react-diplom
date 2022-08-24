@@ -1,0 +1,104 @@
+.bookInfoContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 72px;
+    /* background-color: yellow; */
+
+}
+
+.bookBackground {
+    display: flex;
+    width: 544px;
+    height: 472px;
+    background: #fee9e2;
+    justify-content: flex-end;
+}
+
+.IconsWrapper {
+    display: flex;
+    gap: 25px;
+    /* background-color: blueviolet; */
+}
+
+.detailsWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: aqua; */
+}
+
+.titlesWrapper {
+    display: flex;
+    gap: 120px;
+    /* background-color: aqua; */
+}
+
+.descWrapper {
+    padding: 50px 0;
+}
+
+.oneTitleWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: tomato; */
+}
+
+.dividerLine {
+    width: 161px;
+    height: 2px;
+    background: #313037;
+}
+
+.priceWrapper {
+    font-weight: 700;
+    font-size: 40px;
+    /* background-color: blue; */
+}
+
+.buttonWrapper {
+    margin: 25px 0;
+    width: 448px;
+    height: 56px;
+
+}
+
+.dividerLineSmall {
+    width: 448px;
+    height: 1px;
+    background: #e7e7e7;
+    margin-bottom: 25px;
+}
+
+.textWrapper {
+    font-size: 16px;
+    color: #a8a8a8;
+}
+
+.authorWrapper {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+}
+
+.previewWrapper {
+    width: 159px;
+    height: 24px;
+    font-family: 'Helios';
+    color: #313037;
+    font-style: normal;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-left: 160px;
+    text-decoration: none;
+
+}
+
+.previewWrapper a {
+    text-decoration: none;
+    color: #313037;
+    align-items: center;
+    text-align: center;
+}

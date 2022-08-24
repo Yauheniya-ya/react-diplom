@@ -1,0 +1,73 @@
+.authContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 881px;
+    font-family: Roboto, sans-serif;
+    /* background-color: yellow; */
+    justify-content: center;
+}
+
+/* .authpageContainer {
+    width: 544px;
+    height: 480px;
+    background-color: red;
+} */
+
+.tabsContainer {
+    border: 1px solid #e7e7e7;
+    width: 544px;
+    height: 70px;
+    /* background-color: violet; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tabsButton {
+    background-color: transparent;
+    color: black;
+    border: none;
+    width: 272px;
+}
+
+.signInWrapper {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e7e7e7;
+    width: 544px;
+    height: 478px;
+}
+
+.signUpWrapper {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e7e7e7;
+    width: 544px;
+    height: 584px;
+}
+
+.dividerLeft {
+    height: 2px;
+    width: 239px;
+    background: #313037;
+    margin-left: 32px;
+}
+
+.dividerRight {
+    height: 2px;
+    width: 239px;
+    background: #313037;
+    margin-left: 273px;
+}
+
+.welcomeTextWrapper {
+    width: 480px;
+    height: 64px;
+    background: #f4eefd;
+    margin: 32px 0 0 32px;
+}
+
+.welcomeText {
+    padding: 20px;
+}

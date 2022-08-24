@@ -1,0 +1,19 @@
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+
+    position: relative;
+    width: 147px;
+    height: 60px;
+
+
+    /* System Colors/Primary */
+    color: #FFFFFF;
+    text-transform: uppercase;
+    background: #313037;
+    border-radius: 2px 2px 2px 2px;
+}

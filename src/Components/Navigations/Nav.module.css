@@ -1,0 +1,64 @@
+.wrappernavigations {
+    width: 100%;
+    height: 104px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 72px;
+}
+
+.navigations {
+    position: relative;
+    width: 1120px;
+    height: 104px;
+    top: 0px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.userContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px;
+    gap: 8px;
+
+    position: absolute;
+    width: 184px;
+    height: 56px;
+    right: 0px;
+    top: 24px;
+
+
+}
+
+.userSearch {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 542px;
+    height: 56px;
+    left: 289px;
+    top: 24px;
+    display: flex;
+    justify-content: flex-start;
+
+    /* Background Colors/Gray */
+
+    border: 1px solid #E7E7E7;
+}
+
+.userframe {
+    position: absolute;
+    width: 1120px;
+    height: 1px;
+    justify-content: center;
+    top: 103px;
+
+    /* Background Colors/Gray */
+
+    background: #E7E7E7;
+}
