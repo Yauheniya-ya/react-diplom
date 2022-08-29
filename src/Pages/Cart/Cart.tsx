@@ -11,12 +11,13 @@ import Subscribe from "../../Components/Subscribe";
 import { IBook } from "../../models";
 import { CardCart } from "../../Components/CartCard/CardCart";
 import { useSelector, useDispatch } from "react-redux";
-import { BooksSelectors } from "../../Redux/redusers/book";
+// import { BooksSelectors } from "../../Redux/redusers/book";
+import { CartSelectors } from "../../Redux/redusers/cart";
 
 const CartPage: FC = () => {
-  const cartlist = useSelector(BooksSelectors.getCartBooks);
-  const booksList = useSelector(BooksSelectors.getBooks);
-  const dispatch = useDispatch();
+  const cartlist = useSelector(CartSelectors.getCartBooks);
+  // const booksList = useSelector(BooksSelectors.getBooks);
+  // const dispatch = useDispatch();
   const navigate = useNavigate();
   const onStepBackHandler = () => {
     navigate(-1);
@@ -30,10 +31,10 @@ const CartPage: FC = () => {
           <Title text="Your Cart" />
         </div>
         <div className={classNames(styles.CartWrapper)}>
-          {cartlist.length === 0 && (
+          {cartlist.cart.length === 0 && (
             <p className={classNames(styles.noTtwrap)}>No items.</p>
           )}
-          {cartlist.map((book: IBook) => (
+          {cartlist.cart.map((book: IBook) => (
             <CardCart key={book.isbn13} book={book} cart={[]} />
           ))}
         </div>

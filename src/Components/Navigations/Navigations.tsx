@@ -2,6 +2,7 @@ import classNames from "classnames";
 import { Link } from "react-router-dom";
 import { BookstoreLogo, CartIcon, FavIcon, UserIcon } from "../../Assets";
 import { MainPage } from "../../Pages/Main/MainPaige";
+import BookSearch from "../BookSearch/BookSearch";
 
 import styles from "./Nav.module.css";
 
@@ -14,7 +15,7 @@ function Navigation() {
             <img src={BookstoreLogo} alt="" />
           </Link>
           <div className={classNames(styles.userSearch)}>
-            {/* <BookSearch /> */}
+            <BookSearch />
           </div>
 
           <div className={classNames(styles.userContainer)}>

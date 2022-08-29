@@ -21,8 +21,12 @@ import IconMinus from "./icons/Icon-Minus.svg";
 import IconPlus from "./icons/Icon-Plus.svg";
 import LoginIcon from "./icons/login.svg";
 import ActiveHeart from "./icons/ActiveHeart.svg";
+import Prev from "./icons/Prev.svg";
+import Next from "./icons/Next.svg";
 
 export {
+  Prev,
+  Next,
   ActiveHeart,
   BookstoreLogo,
   SearchIcon,

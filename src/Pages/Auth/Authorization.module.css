@@ -8,20 +8,17 @@
     justify-content: center;
 }
 
-/* .authpageContainer {
-    width: 544px;
-    height: 480px;
-    background-color: red;
-} */
+
 
 .tabsContainer {
     border: 1px solid #e7e7e7;
     width: 544px;
     height: 70px;
-    /* background-color: violet; */
+
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
+    justify-items: flex-start;
 }
 
 .tabsButton {
@@ -35,6 +32,7 @@
     display: flex;
     flex-direction: column;
     border: 1px solid #e7e7e7;
+    justify-content: space-between;
     width: 544px;
     height: 478px;
 }

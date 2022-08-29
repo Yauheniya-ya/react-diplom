@@ -5,6 +5,9 @@ import styles from "./CardCart.module.css";
 import { IBook } from "../../models";
 import { IconCancel } from "../../Assets";
 import IconButton from "../IconButton/IconButton";
+import { useDispatch } from "react-redux";
+import { removeBookFromFav } from "../../Redux/redusers/book";
+import { removeBookFromCart } from "../../Redux/redusers/cart";
 
 type BookCartProps = {
   book: IBook;
@@ -12,6 +15,10 @@ type BookCartProps = {
 };
 
 export const CardCart: FC<BookCartProps> = (props) => {
+  const dispatch = useDispatch();
+  const removeFromCart = (book: IBook) => {
+    dispatch(removeBookFromCart(book.isbn13));
+  };
   const { book } = props;
   return (
     <div className={classNames(styles.Cart_card_wrapper)}>
@@ -33,6 +40,9 @@ export const CardCart: FC<BookCartProps> = (props) => {
         <div className={classNames(styles.Cart_butt)}>
           <IconButton
             icon={IconCancel}
+            onClick={() => {
+              removeFromCart(book!);
+            }}
             // onClick={removeFromFavHandler}
           />
         </div>

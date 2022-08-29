@@ -12,21 +12,20 @@ import {
 import {
   BooksSelectors,
   getBooks,
-  removeBookFromCart,
   removeBookFromFav,
-  setBookToCart,
   setFavBooks,
 } from "../../Redux/redusers/book";
 import { useDispatch, useSelector } from "react-redux";
 import Button from "../Button";
 import IconButton from "../IconButton/IconButton";
 import StarRating from "../StarRating/StarRating";
+import { CartSelectors, setBookToCart } from "../../Redux/redusers/cart";
 
 const PageCard = () => {
   const dispatch = useDispatch();
   const book = useSelector(BooksSelectors.getSelectedBook);
   const favBooksList = useSelector(BooksSelectors.getFavBooks);
-  const cartBooksList = useSelector(BooksSelectors.getCartBooks);
+  const cartBooksList = useSelector(CartSelectors.getCartBooks);
   const [isFav, setIsFav] = useState(favBooksList.includes(book?.isbn13));
 
   useEffect(() => {

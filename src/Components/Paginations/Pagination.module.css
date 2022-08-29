@@ -5,9 +5,10 @@
     flex-direction: row;
     justify-content: space-between;
     position: relative;
-    top: 400px;
-    left: 400px;
+    top: 46px;
+    /* margin-left: -36px; */
     list-style-type: none;
+    padding: 0px;
 
 
 }
@@ -15,5 +16,5 @@
 .wrapper {
     width: 1120px;
     height: 26px;
-    top: 400px;
+
 }

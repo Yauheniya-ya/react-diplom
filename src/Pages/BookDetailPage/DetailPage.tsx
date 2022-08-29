@@ -44,7 +44,7 @@ const BookPage: FC = () => {
         <Subscribe />
 
         <div className={classNames(styles.secondTitleContainer)}>
-          <h2>SIMILAR BOOKS</h2>
+          
           <div className={classNames(styles.arrowsWrapper)}>
             <IconButton icon={IconArrowSmall} onClick={() => {}} />
             <IconButton icon={IconArrowRightSmall} onClick={() => {}} />

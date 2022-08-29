@@ -1,5 +1,5 @@
 import styles from "./Search.module.css";
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 
 import classNames from "classnames";
 
@@ -11,7 +11,7 @@ const BookSearch: FC = () => {
   // const KeyHandler = (event: any) => {
   //   console.log(event.target.value);
   // };
-  // const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("");
   // const [dropdown, setDropdown] = useState(false);
   // const debounced = useDebounce(search);
   // const {} = getallSelectedBookApi();
@@ -26,8 +26,8 @@ const BookSearch: FC = () => {
         className={classNames(styles.input)}
         type="text"
         placeholder="Search "
-        // value={search}
-        // onChange={(e) => setSearch(e.target.value)}
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
         // onInput={KeyHandler}
       />
       {/* {dropdown && (

@@ -1,4 +1,5 @@
 export type IBook = {
+    total:number;
     error: string;
     title: string;
     subtitle: string;

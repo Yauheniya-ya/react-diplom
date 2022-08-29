@@ -11,8 +11,8 @@ export interface FormProps {
 }
 
 const SignInForm: FC<FormProps> = ({ handleClick }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("ololoha753@gmail.com");
+  const [password, setPassword] = useState("7530414");
 
   return (
     <div className={classNames(styles.contentWrapper)}>
@@ -22,6 +22,7 @@ const SignInForm: FC<FormProps> = ({ handleClick }) => {
         value={email}
         onChange={(event: any) => setEmail(event.target.value)}
         placeholder="Your email"
+        className={classNames(styles.input)}
       />
       <p>Password</p>
       <Input
@@ -29,6 +30,7 @@ const SignInForm: FC<FormProps> = ({ handleClick }) => {
         value={password}
         onChange={(event: any) => setPassword(event.target.value)}
         placeholder="Your password"
+        className="input"
       />
       <div className={classNames(styles.forgotPassWrapper)}>
         <Link to="/reset-password">Forgot password?</Link>
