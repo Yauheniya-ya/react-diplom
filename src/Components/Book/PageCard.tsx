@@ -1,11 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import classNames from "classnames";
 import styles from "./PageCard.module.css";
 import { IBook } from "../../models";
-import { Heart, FBIcon, TwitterIcon, MoreIcon } from "../../Assets";
+import {
+  Heart,
+  FBIcon,
+  TwitterIcon,
+  MoreIcon,
+  ActiveHeart,
+} from "../../Assets";
 import {
   BooksSelectors,
   getBooks,
+  removeBookFromCart,
+  removeBookFromFav,
+  setBookToCart,
   setFavBooks,
 } from "../../Redux/redusers/book";
 import { useDispatch, useSelector } from "react-redux";
@@ -16,14 +25,24 @@ import StarRating from "../StarRating/StarRating";
 const PageCard = () => {
   const dispatch = useDispatch();
   const book = useSelector(BooksSelectors.getSelectedBook);
+  const favBooksList = useSelector(BooksSelectors.getFavBooks);
+  const cartBooksList = useSelector(BooksSelectors.getCartBooks);
+  const [isFav, setIsFav] = useState(favBooksList.includes(book?.isbn13));
 
   useEffect(() => {
     dispatch(getBooks());
   }, [dispatch]);
 
-  const addToFavHandler = (book: IBook) => {
+  const addToFavourite = (book: IBook) => {
     dispatch(setFavBooks(book));
-    alert("Added to Favorites!");
+    setIsFav(true);
+  };
+  const removeFromFavourite = (book: IBook) => {
+    dispatch(removeBookFromFav(book.isbn13));
+    setIsFav(false);
+  };
+  const addToCart = (book: IBook) => {
+    dispatch(setBookToCart(book));
   };
 
   return (
@@ -34,12 +53,22 @@ const PageCard = () => {
             <div className={classNames(styles.bookBackground)}>
               <img src={book?.image} alt="book-preview" />
               <div>
-                <IconButton
-                  icon={Heart}
-                  onClick={() => {
-                    addToFavHandler(book!);
-                  }}
-                />
+                {!isFav && (
+                  <IconButton
+                    icon={Heart}
+                    onClick={() => {
+                      addToFavourite(book!);
+                    }}
+                  />
+                )}
+                {isFav && (
+                  <IconButton
+                    icon={ActiveHeart}
+                    onClick={() => {
+                      removeFromFavourite(book!);
+                    }}
+                  />
+                )}
               </div>
             </div>
           </div>
@@ -77,10 +106,13 @@ const PageCard = () => {
             <p>More details...</p>
             <Button
               title="ADD TO CART"
-              onClick={() => {}}
+              onClick={() => {
+                addToCart(book!);
+              }}
               className={classNames(styles.buttonWrapper)}
               type={""}
             />
+
             <div className={classNames(styles.previewWrapper)}>
               <a href={book?.url} target="_blank" rel="noreferrer">
                 Preview book
@@ -100,11 +132,18 @@ const PageCard = () => {
         </div>
 
         <div className={classNames(styles.descWrapper)}>{book?.desc}</div>
+        <div className={classNames(styles.descWrapper)}>{book?.authors}</div>
 
         <div className={classNames(styles.IconsWrapper)}>
-          <IconButton icon={FBIcon} onClick={() => {}} />
-          <IconButton icon={TwitterIcon} onClick={() => {}} />
-          <IconButton icon={MoreIcon} onClick={() => {}} />
+          <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
+            <img src={FBIcon} alt=""></img>
+          </a>
+          <a href="https://twitter.com/home" target="_blank" rel="noreferrer">
+            <img src={TwitterIcon} alt=""></img>
+          </a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
+            <img src={MoreIcon} alt=""></img>
+          </a>
         </div>
       </div>
     </>

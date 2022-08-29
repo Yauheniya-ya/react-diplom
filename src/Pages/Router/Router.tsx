@@ -1,6 +1,8 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { FC } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Footer from "../../Components/Footer/Footer";
 import Navigation from "../../Components/Navigations";
+import useAuth from "../../Hooks/use-auth";
 import Account from "../Account";
 import Authorization from "../Auth";
 import DetailPage from "../BookDetailPage/DetailPage";
@@ -11,7 +13,8 @@ import { FavouritesPage } from "../Favorites/FavPage";
 import { MainPage } from "../Main/MainPaige";
 import Page404 from "../Page404";
 
-const Router = () => {
+const Router: FC = () => {
+  const { isAuth } = useAuth();
   return (
     <BrowserRouter>
       <Navigation />
@@ -19,7 +22,10 @@ const Router = () => {
         <Route path="/authorization" element={<Authorization />} />
         <Route path="/books/:isbn13" element={<DetailPage />} />
         <Route path="/favorites" element={<FavouritesPage />} />
-        <Route path="/cart" element={<CartPage />} />
+        <Route
+          path="/cart"
+          element={isAuth ? <CartPage /> : <Navigate to={"/authorization"} />}
+        />
         <Route path="/account" element={<Account />} />
 
         {/* <Route path="/search" element={<SearchPage />} /> */}

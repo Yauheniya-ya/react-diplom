@@ -7,8 +7,16 @@ import styles from "./Cart.module.css";
 import { IconArrowLeft } from "../../Assets";
 import IconButton from "../../Components/IconButton/IconButton";
 import { Title } from "../../Components/Title/Title";
+import Subscribe from "../../Components/Subscribe";
+import { IBook } from "../../models";
+import { CardCart } from "../../Components/CartCard/CardCart";
+import { useSelector, useDispatch } from "react-redux";
+import { BooksSelectors } from "../../Redux/redusers/book";
 
 const CartPage: FC = () => {
+  const cartlist = useSelector(BooksSelectors.getCartBooks);
+  const booksList = useSelector(BooksSelectors.getBooks);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const onStepBackHandler = () => {
     navigate(-1);
@@ -21,6 +29,15 @@ const CartPage: FC = () => {
           <IconButton icon={IconArrowLeft} onClick={onStepBackHandler} />
           <Title text="Your Cart" />
         </div>
+        <div className={classNames(styles.CartWrapper)}>
+          {cartlist.length === 0 && (
+            <p className={classNames(styles.noTtwrap)}>No items.</p>
+          )}
+          {cartlist.map((book: IBook) => (
+            <CardCart key={book.isbn13} book={book} cart={[]} />
+          ))}
+        </div>
+        <Subscribe />
       </div>
     </div>
   );

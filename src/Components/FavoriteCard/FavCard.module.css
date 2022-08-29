@@ -1,4 +1,4 @@
-.Cart_card_wrapper {
+.Fav_card_wrapper {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -9,7 +9,7 @@
     height: 241.18px;
 }
 
-.Cart_card {
+.Fav_card {
     width: 1120px;
     height: 192.18px;
     /* background-color: blue; */
@@ -18,7 +18,7 @@
     align-items: center;
 }
 
-.Cart_image {
+.Fav_image {
     width: 256px;
     height: 192.18px;
     background: #D7E4FD;
@@ -27,12 +27,12 @@
     align-items: center;
 }
 
-.Cart_view {
+.Fav_view {
     width: 164px;
     height: 192px;
 }
 
-.Cart_info {
+.Fav_info {
     width: 446px;
     height: 120px;
     /* background-color: yellowgreen; */

@@ -1,17 +1,17 @@
 import { combineReducers } from "@reduxjs/toolkit";
 
 import booksReducer from "./book";
-import cartReducer from "./cart";
+// import cartReducer from "./cart";
 import userReducer from "./user";
-import { favouritesReduser } from "./favorites";
+// import { favouritesReduser } from "./favorites";
 import bookDetailReducer  from "./bookdetail/index";
 
 
 const rootReducer = combineReducers({
   books: booksReducer,
-  cart: cartReducer,
+  // cart: cartReducer,
   user: userReducer,
-  favourites:favouritesReduser,
+  // favourites:favouritesReduser,
   bookdetail:bookDetailReducer,
   });
 

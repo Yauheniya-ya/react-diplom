@@ -11,7 +11,7 @@ type InitialStateType = {
   isBooksLoading: boolean;
   selectedBookLoading: boolean;
   favBooksList: any[];
-  cartList: IBook[];
+  cart: any[];
 }; 
 
 const initialState: InitialStateType = {
@@ -20,7 +20,7 @@ const initialState: InitialStateType = {
   isBooksLoading: false,
   selectedBookLoading: false,
   favBooksList: [],
-  cartList: [],
+  cart: [],
 };
 
 const booksSlice = createSlice({
@@ -49,15 +49,15 @@ const booksSlice = createSlice({
       );
     },
     setBookToCart: (state, action: PayloadAction<IBook>) => {
-      state.cartList.push(action.payload);
+      state.cart.push(action.payload);
     },
     removeBookFromCart: (state, action: PayloadAction<any>) => {
-      state.cartList = state.cartList.filter(
+      state.cart = state.cart.filter(
         (book) => book.isbn13 !== action.payload
       );
     },
     removeAllBooksFromCart: (state) => {
-      state.cartList = initialState.cartList;
+      state.cart = initialState.cart;
     },
   },
 });
@@ -86,8 +86,7 @@ export const BooksSelectors = {
   getSelectedBook: (state: RootState) => state.books.selectedBook,
   getSelectedBookLoading: (state: RootState) => state.books.selectedBookLoading,
   getFavBooks: (state: RootState) => state.books.favBooksList,
+  getCartBooks: (state: RootState) => state.books.cart,
+  
 };
 
-export const CartBooksSelector = {
-  getCartBooks: (state: RootState) => state.books.cartList,
-};

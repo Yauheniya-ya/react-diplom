@@ -126,3 +126,13 @@ p {
 
 
 }
+
+.CartWrapper {
+    width: 1120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: Roboto, sans-serif;
+    gap: 48px;
+    /* background-color: aqua; */
+}
