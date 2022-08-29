@@ -21,7 +21,12 @@ const Router: FC = () => {
       <Routes>
         <Route path="/authorization" element={<Authorization />} />
         <Route path="/books/:isbn13" element={<DetailPage />} />
-        <Route path="/favorites" element={<FavouritesPage />} />
+        <Route
+          path="/favorites"
+          element={
+            isAuth ? <FavouritesPage /> : <Navigate to={"/authorization"} />
+          }
+        />
         <Route
           path="/cart"
           element={isAuth ? <CartPage /> : <Navigate to={"/authorization"} />}
