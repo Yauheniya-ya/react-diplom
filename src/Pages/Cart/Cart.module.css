@@ -136,3 +136,29 @@ p {
     gap: 48px;
     /* background-color: aqua; */
 }
+
+.Line {
+    width: 1120px;
+    height: 1px;
+
+    /* Background Colors/Gray */
+
+    background: #E7E7E7;
+}
+
+.Total {
+    width: 256px;
+    height: 228.46px;
+    left: 1264px;
+    margin-top: 48px;
+    margin-left: 864px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-color: blue; */
+}
+
+.cart_button {
+    width: 256px;
+    height: 56px;
+}

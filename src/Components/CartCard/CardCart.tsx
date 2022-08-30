@@ -3,7 +3,7 @@ import classNames from "classnames";
 import styles from "./CardCart.module.css";
 
 import { IBook } from "../../models";
-import { IconCancel } from "../../Assets";
+import { IconCancel, IconMinus, IconPlus } from "../../Assets";
 import IconButton from "../IconButton/IconButton";
 import { useDispatch } from "react-redux";
 import { removeBookFromFav } from "../../Redux/redusers/book";
@@ -35,7 +35,13 @@ export const CardCart: FC<BookCartProps> = (props) => {
             {book.title}
             <p>{book.authors}</p>
           </div>
-          <div className={classNames(styles.Cart_price)}>{book.price}</div>
+          <div className={classNames(styles.Cart_count)}>
+            <IconButton icon={IconMinus} />
+            <IconButton icon={IconPlus} />
+          </div>
+        </div>
+        <div className={classNames(styles.Cart_price)}>
+          <h1>{book.price}</h1>
         </div>
         <div className={classNames(styles.Cart_butt)}>
           <IconButton

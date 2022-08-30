@@ -42,7 +42,15 @@
 
 }
 
-.Fav_title {}
+.Cart_count {
+    width: 168px;
+    height: 56px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
 
 .Fav_price {}
 

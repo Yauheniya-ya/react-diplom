@@ -13,6 +13,7 @@ import { CardCart } from "../../Components/CartCard/CardCart";
 import { useSelector, useDispatch } from "react-redux";
 // import { BooksSelectors } from "../../Redux/redusers/book";
 import { CartSelectors } from "../../Redux/redusers/cart";
+import Button from "../../Components/Button";
 
 const CartPage: FC = () => {
   const cartlist = useSelector(CartSelectors.getCartBooks);
@@ -37,8 +38,22 @@ const CartPage: FC = () => {
           {cartlist.cart.map((book: IBook) => (
             <CardCart key={book.isbn13} book={book} cart={[]} />
           ))}
+          <div className={classNames(styles.Line)}></div>
         </div>
-        <Subscribe />
+
+        <div className={classNames(styles.Total)}>
+          <span>
+            <p>Sum total</p>
+            <p>VAT</p>
+          </span>
+
+          <h1>TOTAL:</h1>
+
+          <Button
+            title={"check out"}
+            className={classNames(styles.cart_button)}
+          />
+        </div>
       </div>
     </div>
   );
