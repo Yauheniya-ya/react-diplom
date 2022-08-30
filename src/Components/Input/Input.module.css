@@ -2,7 +2,7 @@
 
 .input {
     height: 56px;
-    width: 452px;
+    min-width: 452px;
     border: 1px solid #e7e7e7;
     padding-left: 24px;
     font-family: Roboto, sans-serif;

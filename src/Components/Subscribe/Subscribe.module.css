@@ -37,29 +37,30 @@
 .emailWrapper {
     padding: 0 0 45px 64px;
     display: flex;
+    justify-content: space-between;
     width: 992px;
     height: 56px;
 }
 
-.inputEmail {
+/* .inputEmail {
     height: 56px;
     width: 992px;
     border-radius: 2px;
     padding: 16px, 32px, 16px, 24px;
 
-}
+} */
 
-input {
+/* input {
     padding: 0;
     width: 823px;
     height: 56px;
-}
+} */
 
 button {
     margin-top: 1px;
 }
 
-.subInput {
-    width: 992px;
+.subscribeinput {
+    width: 990px;
     height: 56px;
 }

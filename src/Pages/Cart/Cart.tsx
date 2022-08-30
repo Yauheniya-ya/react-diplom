@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import classNames from "classnames";
 import { useNavigate } from "react-router-dom";
 
@@ -7,7 +7,7 @@ import styles from "./Cart.module.css";
 import { IconArrowLeft } from "../../Assets";
 import IconButton from "../../Components/IconButton/IconButton";
 import { Title } from "../../Components/Title/Title";
-import Subscribe from "../../Components/Subscribe";
+// import Subscribe from "../../Components/Subscribe";
 import { IBook } from "../../models";
 import { CardCart } from "../../Components/CartCard/CardCart";
 import { useSelector, useDispatch } from "react-redux";
@@ -15,7 +15,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   CartSelectors,
   removeAllBooksFromCart,
-  setBookToCart,
+  // setBookToCart,
 } from "../../Redux/redusers/cart";
 import Button from "../../Components/Button";
 
@@ -40,6 +40,7 @@ const CartPage: FC = () => {
 
   const CheckOutHandler = () => {
     dispatch(removeAllBooksFromCart());
+    alert("Thank you for shopping with us.");
   };
 
   return (
@@ -70,7 +71,7 @@ const CartPage: FC = () => {
           <Button
             title={"check out"}
             className={classNames(styles.cart_button)}
-            onClick={() => {}}
+            onClick={CheckOutHandler}
           />
         </div>
       </div>

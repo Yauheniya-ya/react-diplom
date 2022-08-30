@@ -19,7 +19,7 @@ const Subscribe: FC = () => {
         <div className={classNames(styles.emailWrapper)}>
           <Input
             type="text"
-            className={classNames(styles.subInput)}
+            className={classNames(styles.subscribeinput)}
             onChange={onchange}
             placeholder="Your email"
           />

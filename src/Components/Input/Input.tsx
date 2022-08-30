@@ -21,6 +21,7 @@ export const Input: FC<InputProps> = ({
   placeholder,
   onKeyDown,
   onInput,
+  className,
 }) => {
   // const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
   //   onChange(event.target.value);
@@ -31,7 +32,7 @@ export const Input: FC<InputProps> = ({
       type={type}
       value={value}
       onChange={onChange}
-      className={classNames(styles.input)}
+      className={classNames(styles.input, className)}
       placeholder={placeholder}
       onKeyDown={onKeyDown}
       onInput={onInput}
