@@ -5,7 +5,7 @@ import cartReducer from "./cart";
 import userReducer from "./user";
 // import { favouritesReduser } from "./favorites";
 import  searchReducer  from './search';
-import bookDetailReducer  from "./bookdetail/index";
+
 
 
 const rootReducer = combineReducers({
@@ -14,7 +14,7 @@ const rootReducer = combineReducers({
   user: userReducer,
   // favourites:favouritesReduser,
   search:searchReducer,
-  bookdetail:bookDetailReducer,
+ 
   });
 
 export default rootReducer;

@@ -26,7 +26,7 @@ const Subscribe: FC = () => {
 
           <Button
             title="SUBSCRIBE"
-            onClick={() => alert("You are subscribed!")}
+            onClick={(preventDefaut) => alert("You are subscribed!")}
             type={""}
           />
         </div>

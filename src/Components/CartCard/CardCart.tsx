@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import classNames from "classnames";
 import styles from "./CardCart.module.css";
 
@@ -6,7 +6,6 @@ import { IBook } from "../../models";
 import { IconCancel, IconMinus, IconPlus } from "../../Assets";
 import IconButton from "../IconButton/IconButton";
 import { useDispatch } from "react-redux";
-import { removeBookFromFav } from "../../Redux/redusers/book";
 import { removeBookFromCart } from "../../Redux/redusers/cart";
 
 type BookCartProps = {
@@ -15,11 +14,13 @@ type BookCartProps = {
 };
 
 export const CardCart: FC<BookCartProps> = (props) => {
+  const [count, setCount] = useState(1);
   const dispatch = useDispatch();
   const removeFromCart = (book: IBook) => {
     dispatch(removeBookFromCart(book.isbn13));
   };
   const { book } = props;
+
   return (
     <div className={classNames(styles.Cart_card_wrapper)}>
       <div className={classNames(styles.Cart_card)}>
@@ -36,8 +37,19 @@ export const CardCart: FC<BookCartProps> = (props) => {
             <p>{book.authors}</p>
           </div>
           <div className={classNames(styles.Cart_count)}>
-            <IconButton icon={IconMinus} />
-            <IconButton icon={IconPlus} />
+            <IconButton
+              icon={IconMinus}
+              onClick={() => {
+                setCount(count - 1);
+              }}
+            />
+            <h1>{count}</h1>
+            <IconButton
+              icon={IconPlus}
+              onClick={() => {
+                setCount(count + 1);
+              }}
+            />
           </div>
         </div>
         <div className={classNames(styles.Cart_price)}>

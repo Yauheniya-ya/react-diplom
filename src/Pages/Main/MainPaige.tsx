@@ -1,8 +1,8 @@
 import classNames from "classnames";
-import { useEffect, useState } from "react";
-import ReactPaginate from "react-paginate";
+import { useEffect } from "react";
+// import ReactPaginate from "react-paginate";
 import { useSelector, useDispatch } from "react-redux";
-import { ErrorImg, Next, Prev } from "../../Assets";
+import { ErrorImg } from "../../Assets";
 import { Card } from "../../Components/Card/Card";
 import { Paginate } from "../../Components/Paginations/Paginations";
 import Subscribe from "../../Components/Subscribe";
@@ -26,7 +26,7 @@ export function MainPage() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getBooks());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className={classNames(styles.Mainpage_wrapper)}>

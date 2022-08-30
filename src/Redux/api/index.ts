@@ -10,8 +10,8 @@ const getAllBooksApi = () => {
 const getSelectedBookApi = (isbn13: string) => {
   return API.get(`/books/${isbn13}`);
 };
-const getSearchBookApi = () => {
-  return API.any({ method: 'GET', url: '/search', params: {total : 12 }});
+const getSearchBookApi = (query:string, page:string) => {
+  return API.get(`/search/${query}/${page}`);
 };
 
 export { getAllBooksApi, getSelectedBookApi,getSearchBookApi };

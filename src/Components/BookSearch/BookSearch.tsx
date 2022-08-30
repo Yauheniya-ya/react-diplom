@@ -1,33 +1,24 @@
-import styles from "./Search.module.css";
-import React, { FC, useState } from "react";
+import styles from "../BookSearch/Search.module.css";
+import React, { ChangeEvent, FC, useState } from "react";
 
 import classNames from "classnames";
+// import { useDebounce } from "../../Hooks/debounce";
 
 const BookSearch: FC = () => {
-  // const navigate = useNavigate();
-  // const ClickHandler = (booktitle: string) => {
-  //   console.log(booktitle);
-  // };
-  // const KeyHandler = (event: any) => {
-  //   console.log(event.target.value);
-  // };
-  const [search, setSearch] = useState("");
-  // const [dropdown, setDropdown] = useState(false);
-  // const debounced = useDebounce(search);
-  // const {} = getallSelectedBookApi();
-
-  // useEffect(() => {
-  //   setDropdown(debounced.length > 3 && data?.length! > 0);
-  // }, [debounced, data]);
+  const [value, setValue] = useState("");
+  // const debounced = useDebounce(value, 500);
+  const changeHandler = (event: ChangeEvent<HTMLInputElement>) => {
+    setValue(event.target.value);
+  };
 
   return (
     <div className={classNames(styles.search)}>
       <input
         className={classNames(styles.input)}
         type="text"
-        placeholder="Search "
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
+        placeholder="Search... "
+        value={value}
+        onChange={changeHandler}
         // onInput={KeyHandler}
       />
       {/* {dropdown && (
