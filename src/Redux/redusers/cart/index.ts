@@ -3,11 +3,17 @@ import { IBook } from "../../../models";
 import { RootState } from "../../store";
 
 type InitialStateType = {
+  
   cart: any[];
+  cartSum:number;
+  cartCount:number;
 }; 
 
 const initialState: InitialStateType = {
   cart: [],
+  cartSum: 0,
+  cartCount: 0,
+  
 };
 
 const cartSlice = createSlice({

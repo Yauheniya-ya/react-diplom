@@ -11,7 +11,7 @@ export type IBook = {
     year: string;
     rating: number;
     desc: string;
-    price: string;
+    price: number;
     image: string;
     url: string;
     pdf: PdfModel;
